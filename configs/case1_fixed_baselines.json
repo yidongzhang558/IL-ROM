@@ -1,0 +1,105 @@
+{
+  "case": "case1_forced_convection",
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "split": {
+    "train": [
+      0,
+      800
+    ],
+    "unused": [
+      800,
+      900
+    ],
+    "validation": [
+      900,
+      1100
+    ],
+    "test": [
+      1100,
+      1600
+    ]
+  },
+  "pod_rank": 12,
+  "selection_metric": "mean sample-wise relative L2 on validation C1",
+  "deeponet": {
+    "epochs": 400,
+    "batch_size": 64,
+    "lr": 0.0012,
+    "weight_decay": 0.0001,
+    "seed_offset": 301,
+    "order_seed_offset": 7000,
+    "width": 160,
+    "basis_dim": 128,
+    "patience_epochs": 60,
+    "min_epochs": 100,
+    "eval_every": 5,
+    "loss": "normalized physical L1 + 0.2 MSE",
+    "layouts": [
+      "C1_standard"
+    ]
+  },
+  "fno": {
+    "epochs": 160,
+    "batch_size": 64,
+    "lr": 0.0008,
+    "weight_decay": 0.0001,
+    "seed_offset": 101,
+    "order_seed_offset": 5000,
+    "width": 48,
+    "modes": 16,
+    "layers": 4,
+    "fc_size": 64,
+    "patience_epochs": 35,
+    "min_epochs": 60,
+    "eval_every": 5,
+    "loss": "normalized physical L1 + 0.2 MSE",
+    "layouts": [
+      "C1_standard"
+    ]
+  },
+  "set_encoder": {
+    "epochs": 220,
+    "batch_size": 64,
+    "lr": 0.0008,
+    "weight_decay": 0.0001,
+    "init_seed_offset": 1,
+    "training_seed_offset": 11,
+    "d_model": 64,
+    "heads": 4,
+    "layers": 2,
+    "condition_dim": 0,
+    "patience_epochs": 60,
+    "min_epochs": 150,
+    "eval_every": 5,
+    "loss": "latent MSE + normalized physical L1",
+    "selection_layout": "C1_standard",
+    "evaluation_layouts": "C1-C5",
+    "training_layouts": "original variable-layout sampler"
+  },
+  "pod_gp": {
+    "rank": 12,
+    "length_scale_multipliers": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "noise_grid": [
+      1e-05,
+      0.001
+    ],
+    "distance_median_first_n": 300,
+    "length_scale_min": 0.1,
+    "deterministic": true,
+    "layouts": [
+      "C1_standard"
+    ]
+  },
+  "neural_scheduler": "CosineAnnealingLR(T_max=epochs)",
+  "neural_grad_clip": 5.0,
+  "validation_improvement_threshold": 1e-05,
+  "pretrained_inputs": false
+}

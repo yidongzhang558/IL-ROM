@@ -1,0 +1,25 @@
+{
+  "scope": "Case 1 forced-convection data. T.npy is distributed separately, see README.md.",
+  "data_files": [
+    {
+      "path": "case1_forced_convection/T.npy",
+      "bytes": 655360128,
+      "sha256": "ffc177347795169f7a840a39b8554231617b27a084299f0939c75865abcddf22"
+    },
+    {
+      "path": "case1_forced_convection/qw.npy",
+      "bytes": 2048128,
+      "sha256": "8cd821c3536af99c8c8dba0481a79657599cc1e62925f4d8ca07335d814ed889"
+    },
+    {
+      "path": "case1_forced_convection/umean.npy",
+      "bytes": 6528,
+      "sha256": "72e3d325f8adf5861dcf95cdf72507ed1a845e01094b1e890866018ebc6b1247"
+    },
+    {
+      "path": "case1_forced_convection/metadata.json",
+      "bytes": 369,
+      "sha256": "5c0d8e6c9106d3448e197a1a1925a1bd353935d6c556f25f4dde84a326bccc58"
+    }
+  ]
+}

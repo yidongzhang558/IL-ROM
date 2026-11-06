@@ -1,0 +1,15 @@
+{
+  "case": "forced_convection",
+  "grid": 320,
+  "samples": 1600,
+  "seed": 2026,
+  "native_high_resolution": true,
+  "domain_size": 0.1,
+  "temperature_boundary": 298.0,
+  "t_mean": 299.13018798828125,
+  "t_std": 1.8232470750808716,
+  "q_mean": 307.863037109375,
+  "q_std": 366.15576171875,
+  "u_mean": 100.47250366210938,
+  "u_std": 62.66440963745117
+}
